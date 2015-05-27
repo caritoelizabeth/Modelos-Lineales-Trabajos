@@ -7,6 +7,8 @@
 # 2.1 Leer el archivo de datos data.txt, y analizar de que estructura de datos se trata.
 # Utilice la función read.table()
 
+read.table()
+
 # 2.2 Calcular el mínimo, la media, el máximo de la variable Edad.
 # Utilice las funciones min(), mean(), max(), de ser necesario utilice 
 # el parámetro na.rm = TRUE
