@@ -140,16 +140,47 @@ p
 
 # 3.3 Seleccione los sujetos que tienen más ($>$) de dos cargas familiatres.
 
+cargas_familiares <- subset(data, subset=data[,"Cargas"]>2)
+
+table(data[,"Cargas"])
+
+table(cargas_familiares[,"Cargas"])
+
+q <- nrow(cargas_familiares)
+
+q
+#q=11 personas tienen más de dos cargas familiares
+
 # 3.4 Seleccione los sujetos con una Deuda superior o igual a 500 dólares
 # y más ($>$) de 8 Dias_Atraso.
+
+deuda_dias_de_atraso<-subset(data,(subset=data[,"Deuda"]>=500)&(subset =data[,"Dias_Atraso"]>8))
+
+table(deuda_dias_de_atraso[,"Deuda"], deuda_dias_de_atraso[,"Dias_Atraso"])
+
+m <- nrow(deuda_dias_de_atraso)
+
+m 
+# m=38 sujetos tienen una deusa superior a 500dolares y mas de 8 dias de atraso
 
 # 3.5 Seleccione los sujetos con un Score mayor o igual a 900 puntos, una Edad menor
 # o igual a 35 años y con más ($>$) de 3 tarjetas de crédito (Numero_TC).
 
+score_edad_tarjetas<-subset(data,(subset=data[,"Score"]>="900")&(subset =data[,"Edad"]<="35")&(subset =data[,"Numero_TC"]>3))
+
+table(score_edad_tarjetas[,"Score"], score_edad_tarjetas[,"Edad"],score_edad_tarjetas[,"Numero_TC"])
+
+s <- nrow(score_edad_tarjetas)
+
+s
+# s=2934 personas tienen un score>=900 puntos, una edad<=35,mas de 3 tarjetas
+
 # 4. Gráficos:
 # 4.1 Realice un histograma de la variable Edad, utilice como color de relleno: red
+
+hist(edad, col="red")
 
 # 4.2 Realice un diagrama de cajas de la variable Edad, utilice como color de relleno: green
 # Utilice la función boxplot()
 
-
+boxplot(edad, col = "green")
